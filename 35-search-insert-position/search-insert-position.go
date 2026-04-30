@@ -1,0 +1,23 @@
+func searchInsert(nums []int, target int) int {
+    f:=true
+    l:=0
+    r:=len(nums)-1
+    for l<=r{
+        m:=l + (r-l)/2
+        if nums[m]>target{
+        
+            r=m-1
+        }else if nums[m]<target{
+            l=m+1        
+        }else {
+            f=false
+            return m
+        }
+
+    }
+    if f{
+        return l
+    }
+    return -1
+    
+}
